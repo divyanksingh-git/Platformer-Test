@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://vh8eedkjtqpp"]
+
+[ext_resource type="Script" path="res://characters/player.gd" id="1_vyrui"]
+[ext_resource type="Texture2D" uid="uid://c7i2cvxavm17j" path="res://art/player/john_static.png" id="1_wlmjx"]
+[ext_resource type="Script" path="res://characters/Node2d.gd" id="3_sr00j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_60an5"]
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_vyrui")
+
+[node name="JohnStatic" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_wlmjx")
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_60an5")
+
+[node name="Node2d" type="Node2D" parent="."]
+script = ExtResource("3_sr00j")
+
+[node name="Marker2d" type="Marker2D" parent="Node2d"]
+position = Vector2(23, 8)
